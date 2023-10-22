@@ -239,6 +239,7 @@ body {
 
         display: flex;
         align-items: center;
+        justify-content: center;
 
         #maindiv {
           position: absolute;
@@ -247,55 +248,101 @@ body {
           left: -30vw;
           overflow: hidden;
           white-space: nowrap;
-        }
 
-        #div1 {
-          display: inline-block;
-          animation: marquee 20s linear infinite;
-          animation-delay: -10s;
+          #div1 {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+            animation-delay: -10s;
 
-          color: #FFF;
-          text-align: center;
-          font-family: Proxima Nova Cn Lt;
-          font-size: 73px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: normal;
-          letter-spacing: -0.45px;
-        }
-
-        #div2 {
-          display: inline-block;
-          animation: marquee2 20s linear infinite;
-          animation-delay: 0;
-
-          color: #FFF;
-          text-align: center;
-          font-family: Proxima Nova Cn Lt;
-          font-size: 73px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: normal;
-          letter-spacing: -0.45px;
-        }
-
-        @keyframes marquee {
-          from {
-            transform: translateX(100%);
+            color: #FFF;
+            text-align: center;
+            font-family: Proxima Nova Cn Lt;
+            font-size: 73px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: -0.45px;
           }
 
-          to {
-            transform: translateX(-100%);
+          #div2 {
+            display: inline-block;
+            animation: marquee2 20s linear infinite;
+            animation-delay: 0;
+
+            color: #FFF;
+            text-align: center;
+            font-family: Proxima Nova Cn Lt;
+            font-size: 73px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: -0.45px;
+          }
+
+          @keyframes marquee {
+            from {
+              transform: translateX(100%);
+            }
+
+            to {
+              transform: translateX(-100%);
+            }
+          }
+
+          @keyframes marquee2 {
+            from {
+              transform: translateX(0%);
+            }
+
+            to {
+              transform: translateX(-200%);
+            }
           }
         }
 
-        @keyframes marquee2 {
-          from {
-            transform: translateX(0%);
-          }
+        .holder {
+          position: absolute;
+          width: 500px;
+          z-index: 21;
+          height: 500px;
+          cursor: pointer;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-          to {
-            transform: translateX(-200%);
+          .bubble {
+            pointer-events: none;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // margin: -30px 0 0 -30px;
+            width: 200px;
+            height: 200px;
+            // background-color: #ffffff;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            // color: white;
+            transition: border 0.8s ease;
+
+            .bubble-out {
+              width: 40px;
+              height: 40px;
+              background-color: #ffffff;
+              border-radius: 50%;
+              transition: background-color 0.8s ease;
+            }
+          }
+        }
+
+        .holder:hover {
+          .bubble {
+            border-color: #0057FF;
+
+            .bubble-out {
+              background-color: #0057FF;
+            }
           }
         }
       }
