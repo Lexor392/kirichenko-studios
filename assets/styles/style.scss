@@ -243,39 +243,57 @@ body {
         #maindiv {
           position: absolute;
           z-index: 20;
-          
+
           left: -30vw;
           overflow: hidden;
           white-space: nowrap;
-          font-size: 70px;
         }
+
         #div1 {
           display: inline-block;
           animation: marquee 20s linear infinite;
           animation-delay: -10s;
-          color: #fff;
+
+          color: #FFF;
+          text-align: center;
+          font-family: Proxima Nova Cn Lt;
+          font-size: 73px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          letter-spacing: -0.45px;
         }
-        
+
         #div2 {
           display: inline-block;
           animation: marquee2 20s linear infinite;
           animation-delay: 0;
-          color: #fff;
+
+          color: #FFF;
+          text-align: center;
+          font-family: Proxima Nova Cn Lt;
+          font-size: 73px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          letter-spacing: -0.45px;
         }
-        
+
         @keyframes marquee {
           from {
             transform: translateX(100%);
           }
+
           to {
             transform: translateX(-100%);
           }
         }
-        
+
         @keyframes marquee2 {
           from {
             transform: translateX(0%);
           }
+
           to {
             transform: translateX(-200%);
           }
